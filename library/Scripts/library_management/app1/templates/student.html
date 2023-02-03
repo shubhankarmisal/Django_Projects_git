@@ -1,0 +1,47 @@
+{% include 'header.html' %} 
+
+<div class="container">
+    <h2 style='margin:20px;'>Students:</h2>
+    <button style='margin:20px;' class='btn btn-warning' type="submit"> 
+        <a href="{% url 'add-student' %}" style='color:black;'>Add Student</a> 
+    </button>
+    <table class="table table-striped table-hover py-4">
+        <thead>
+          <tr class="table-primary">
+            <th scope="col">S_name</th>
+            <th scope="col">S_age</th>
+            <th scope="col">S_phone</th>
+            <th scope="col">Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+
+            {% for i in student  %}
+
+            <tr class="table-primary">
+                <td>{{i.s_name}}</td>
+                <td>{{i.s_age}}</td>
+                <td>{{i.s_phone}}</td>
+                <td style='width:20%;'>
+                    <button type="submit" class='btn btn-success'>
+                        <a href="updatestudent/{{i.id}}" id='{{i.id}}'  style='color:white;'>Edit</a>
+                    </button>
+                    |
+                    <button type="submit" class='btn btn-danger'>
+                        <a href="deletetudent/{{i.id}}" id='{{i.id}}'  style='color:white;'>Delete</a>
+                    </button>
+
+                </td> 
+            </tr>
+            
+            {% endfor  %}
+         
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+

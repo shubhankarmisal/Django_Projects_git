@@ -1,0 +1,22 @@
+{% include 'header.html' %} 
+
+<div class="" style=' border:1px solid black; margin-left:35%; margin-right:30%; padding:40px;'>
+    <h1 style = 'text-align:center;'>Login</h1> <hr>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+            {% for i in login_form  %}
+            <tr>
+                <td style='padding:15px;'>{{i.label}}:</td>
+                <td>{{i}}</td>
+            
+            </tr>
+            {% endfor  %}
+        </table>
+      <br>
+        <button type="submit" style='margin-left:17px;' class='btn btn-primary'>Login</button>
+    </form>
+    <br>    
+    <p>If you already have an account: <a href="/register">Create an account</a></p>
+   
+</div>

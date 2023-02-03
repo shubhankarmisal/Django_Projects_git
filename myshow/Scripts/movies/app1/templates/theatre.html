@@ -1,0 +1,34 @@
+{% include 'header.html' %} 
+
+<div class="container">
+    <h2 style='margin:20px;'>Theatres:</h2>
+    <button style='margin:20px;' class='btn btn-info' type="submit"> 
+        <a href="{% url 'add-theatre' %}" style='color:black;'>Add theatre</a> 
+    </button>
+    <table class="table table-striped table-hover py-4">
+        <thead>
+          <tr class="table-primary">
+            <th scope="col">T_name</th>
+            <th scope="col">T_location</th>
+          </tr>
+        </thead>
+        <tbody>
+
+            {% for i in theatre  %}
+
+            <tr>
+                <td>{{i.t_name}}</td>
+                <td>{{i.t_location}}</td>
+            </tr>
+            
+            {% endfor  %}
+         
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+

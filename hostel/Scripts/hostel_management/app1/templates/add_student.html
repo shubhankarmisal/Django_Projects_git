@@ -1,0 +1,18 @@
+{% include 'header.html' %} 
+
+<center>
+    <h1 class="display-3 py-5" style="background-color:#000000;color:#FFFF99;">Add Student</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {% for i in add_student %}
+            <tr>
+                <th>{{i.label}}</th>
+                <td>{{ i }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <button type="submit" class="btn btn-lg btn-success">Submit</button>
+    </form>
+</center>

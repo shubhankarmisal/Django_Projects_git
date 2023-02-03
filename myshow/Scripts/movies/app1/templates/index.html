@@ -1,0 +1,65 @@
+{% include 'header.html' %} 
+
+{% comment %} banner starts {% endcomment %}
+{% comment %} 
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      {% for i in banners %}
+      <div class="carousel-item active">
+        <img src="/static/img/{{i.b_img}}" class=" w-30" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{i.b_name}}</h5>
+          <p>{{i.b_info}}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+</div>    {% endcomment %}
+
+
+
+
+
+
+{% comment %} banner ends {% endcomment %}
+
+{% comment %} movie card starts {% endcomment %}
+
+
+<div class="container py-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for i in movie %}
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+        <img src="/static/img/{{i.m_picture}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Name: {{i.m_name}}</h5>
+          <h5 class="card-title">Director: {{i.m_Director}}</h5>
+          <p class="card-text">Desc: {{i.m_discription}}</p>
+          <a href="update/{{i.id}}" id='{{i.id}}' class="btn btn-success">Edit</a> |
+          <a href="delete/{{i.id}}" id='{{i.id}}' class="btn btn-danger">Delete</a>
+        </div>
+      </div>
+    </div>  
+    {% endfor  %}
+    </div>  
+</div>
+
+
+{% comment %} movie card ends {% endcomment %}
+
+</body>
+</html>
